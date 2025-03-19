@@ -1,8 +1,10 @@
 import axios from "axios";
 import { ACCESS_TOKEN, REFRESH_TOKEN, API_BASE_URL } from "./constants";
 
+const apiURL = "/choreo-apis/django-react-tutorial/backend/v1"
+
 const api = axios.create({
-    baseURL: API_BASE_URL,
+    baseURL: import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL : apiURL,
     headers: {
         'Content-Type': 'application/json',
     },
